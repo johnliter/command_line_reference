@@ -3,10 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const filter = document.getElementById('filter');
     const searchInput = document.getElementById('search');
     const commandsContainer = document.getElementById('commands');
-    const reviewButton = document.getElementById('review-button');
-    const reviewModal = document.getElementById('review-modal');
-    const closeModal = reviewModal.querySelector('.close');
-    const reviewForm = document.getElementById('review-form');
 
     // Automatically set the initial theme based on user preference
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -121,61 +117,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial fetch and render
     fetchCommands();
-
-    // Review modal functionality
-    reviewButton.addEventListener('click', () => {
-        reviewModal.style.display = 'block';
-    });
-
-    closeModal.addEventListener('click', () => {
-        reviewModal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === reviewModal) {
-            reviewModal.style.display = 'none';
-        }
-    });
-
-    reviewForm.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const rating = document.querySelector('input[name="rating"]:checked').value;
-        const comments = document.getElementById('comments').value;
-
-        const review = {
-            name: name || 'Anonymous',
-            rating: rating,
-            comments: comments,
-        };
-
-        try {
-            const response = await fetch('https://api.github.com/repos/johnliter/command_line_reference/dispatches', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/vnd.github.everest-preview+json',
-                    'Authorization': 'token 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',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    event_type: 'submit-review',
-                    client_payload: {
-                        review: review,
-                    },
-                }),
-            });
-
-            if (response.ok) {
-                alert('Review submitted successfully!');
-                window.location.href = 'reviews.html';
-            } else {
-                alert('Failed to submit review.');
-            }
-        } catch (error) {
-            console.error('Error submitting review:', error);
-            alert('Failed to submit review.');
-        }
-
-        reviewModal.style.display = 'none';
-    });
 });
