@@ -70,15 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="mt-8 text-left">
                     <h2 class="text-xl font-bold mb-2">Windows Command Line</h2>
                     <p class="mb-4">The Windows command line, also known as Command Prompt, is used to execute command-line programs and scripts. It is particularly useful for tasks such as file management, system configuration, and network troubleshooting. Command Prompt is typically used in enterprise environments and for advanced troubleshooting tasks.</p>
-                    <a href="windows_documentation.html" class="bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block" role="button">Learn More</a>
 
                     <h2 class="text-xl font-bold mb-2">Mac Command Line</h2>
                     <p class="mb-4">The Mac command line, accessible through the Terminal application, provides users with a powerful way to interact with their system using Unix-based commands. It is commonly used for software development, system administration, and automation tasks. The Mac Terminal is similar to Linux terminals, making it familiar to users who work with Unix-like systems.</p>
-                    <a href="mac_documentation.html" class="bg-green-500 text-white px-4 py-2 rounded mb-4 inline-block" role="button">Learn More</a>
 
                     <h2 class="text-xl font-bold mb-2">Linux Command Line</h2>
                     <p class="mb-4">The Linux command line, also known as the shell, is an essential tool for managing Linux systems. It allows users to perform a wide range of tasks, from system monitoring and file management to software installation and network configuration. The Linux command line is highly versatile and is widely used by system administrators, developers, and power users.</p>
-                    <a href="linux_documentation.html" class="bg-red-500 text-white px-4 py-2 rounded mb-4 inline-block" role="button">Learn More</a>
                 </div>
             </div>
         `;
