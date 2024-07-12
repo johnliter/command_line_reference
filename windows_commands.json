@@ -1,0 +1,18 @@
+[
+    { "command": "dir", "hashtag": "windows", "description": "List directory contents" },
+    { "command": "cd", "hashtag": "windows", "description": "Change directory" },
+    { "command": "cls", "hashtag": "windows", "description": "Clear the terminal screen" },
+    { "command": "copy", "hashtag": "windows", "description": "Copy files" },
+    { "command": "move", "hashtag": "windows", "description": "Move files" },
+    { "command": "del", "hashtag": "windows", "description": "Delete files" },
+    { "command": "md", "hashtag": "windows", "description": "Create a new directory" },
+    { "command": "rd", "hashtag": "windows", "description": "Remove an empty directory" },
+    { "command": "type", "hashtag": "windows", "description": "Display the contents of a file" },
+    { "command": "attrib", "hashtag": "windows", "description": "Change file attributes" },
+    { "command": "ipconfig", "hashtag": "windows", "description": "Display IP configuration" },
+    { "command": "tasklist", "hashtag": "windows", "description": "Display a list of currently running processes" },
+    { "command": "taskkill", "hashtag": "windows", "description": "Terminate a running process" },
+    { "command": "netstat", "hashtag": "windows", "description": "Display network connections" },
+    { "command": "ping", "hashtag": "windows", "description": "Send ICMP ECHO_REQUEST to network hosts" },
+    { "command": "hostname", "hashtag": "windows", "description": "Display the hostname of the computer" }
+]
