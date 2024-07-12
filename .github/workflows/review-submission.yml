@@ -1,0 +1,28 @@
+name: Review Submission
+
+on:
+  repository_dispatch:
+    types: [submit-review]
+
+jobs:
+  submit-review:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Update reviews.json
+      run: |
+        echo "${{ github.event.client_payload.review }}" > review.json
+        cat review.json | jq -s '.[0] + [.[1]]' reviews.json - > updated_reviews.json
+        mv updated_reviews.json reviews.json
+        rm review.json
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add reviews.json
+        git commit -m "Add new review"
+        git push
